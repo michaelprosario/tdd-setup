@@ -1,6 +1,19 @@
-export class SimpleAdder
-{
-  public AddStuff(numberA: number, numberB: number): number{
-    return numberA + numberB;
-  }
+
+export function Add(numbers) {
+    if (numbers == "" || numbers == null) {
+      return 0;
+    }
+
+    if (numbers.indexOf(",") !== -1) {
+      var numberParts = numbers.split(",");
+      var sum = 0;
+      numberParts.forEach(numberAsString => {
+        sum += parseInt(numberAsString);
+      })
+
+      return sum;
+    }
+
+    return 0
+  
 }
